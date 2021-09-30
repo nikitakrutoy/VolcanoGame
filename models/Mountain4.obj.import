@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Mountain4.obj-49cc5e7ac37278ac891fd82c6447e5ce.mesh"
+
+[deps]
+
+files=[ "res://.import/Mountain4.obj-49cc5e7ac37278ac891fd82c6447e5ce.mesh" ]
+
+source_file="res://models/Mountain4.obj"
+dest_files=[ "res://.import/Mountain4.obj-49cc5e7ac37278ac891fd82c6447e5ce.mesh", "res://.import/Mountain4.obj-49cc5e7ac37278ac891fd82c6447e5ce.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

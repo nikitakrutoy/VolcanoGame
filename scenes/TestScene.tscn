@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/Cell.tscn" type="PackedScene" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1, -1.80145e-07, 2.86544e-08, -1.95666e-08, -0.0502462, -0.998737, 1.81358e-07, -0.998737, 0.0502462, 0.0057415, -0.0334366, 5.05013 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, -1.94026e-08, -1.50996e-07, -1.94026e-08, 1, -1.5522e-07, 1.50996e-07, -1.5522e-07, -1, 0.00574067, 0.0115472, -0.000692591 )

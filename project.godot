@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Sprite",
+"class": "Chip",
+"language": "GDScript",
+"path": "res://scripts/Prototype/chip.gd"
+}, {
+"base": "MeshInstance",
+"class": "CloudDome",
+"language": "GDScript",
+"path": "res://addons/cloud/Cloud.gd"
+}, {
+"base": "Node",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://scripts/Prototype/utils.gd"
+} ]
+_global_script_class_icons={
+"Chip": "",
+"CloudDome": "",
+"Utils": ""
+}
+
+[application]
+
+config/name="VolcanoGame"
+run/main_scene="res://scenes/Game3D.tscn"
+config/icon="res://img/icon.png"
+
+[display]
+
+window/size/width=700
+window/size/height=960
+window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/cloud/plugin.cfg" )
+
+[global]
+
+Background=false
+
+[rendering]
+
+environment/default_clear_color=Color( 0.760784, 0.819608, 0.807843, 1 )
+environment/default_environment="res://default_env.tres"

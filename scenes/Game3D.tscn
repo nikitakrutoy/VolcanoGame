@@ -1,0 +1,770 @@
+[gd_scene load_steps=78 format=2]
+
+[ext_resource path="res://addons/cloud/Cloud.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/cloud/Cloud.shader" type="Shader" id=2]
+[ext_resource path="res://scenes/Camera003.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Spatial.gd" type="Script" id=4]
+[ext_resource path="res://default_env.tres" type="Environment" id=5]
+[ext_resource path="res://materials/AshMaterial.tres" type="Material" id=6]
+[ext_resource path="res://data/Minecraft.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scripts/Game3D.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Field.gd" type="Script" id=9]
+[ext_resource path="res://models/Rock2.glb" type="PackedScene" id=10]
+[ext_resource path="res://models/Mountain1.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://textures/Rock1_Albedo.png" type="Texture" id=12]
+[ext_resource path="res://models/Lava.obj" type="ArrayMesh" id=13]
+[ext_resource path="res://models/Volcano.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://textures/Volcano_Albedo.png" type="Texture" id=15]
+[ext_resource path="res://textures/Mountain1_Normal.png" type="Texture" id=16]
+[ext_resource path="res://textures/Mountain1_Albedo.png" type="Texture" id=17]
+[ext_resource path="res://textures/Volcano_Normal.png" type="Texture" id=18]
+[ext_resource path="res://textures/Volcano_Emission.png" type="Texture" id=19]
+[ext_resource path="res://textures/Lava_Normal.png" type="Texture" id=20]
+[ext_resource path="res://textures/Lava_Albedo.png" type="Texture" id=21]
+[ext_resource path="res://textures/Lava_Emit.png" type="Texture" id=22]
+[ext_resource path="res://textures/Mountain1_Emit.png" type="Texture" id=23]
+[ext_resource path="res://textures/Mountain3_Normal.png" type="Texture" id=24]
+[ext_resource path="res://textures/Mountain2_Albedo.png" type="Texture" id=25]
+[ext_resource path="res://textures/Mountain4_Albedo.png" type="Texture" id=26]
+[ext_resource path="res://textures/Mountain2_Emit.png" type="Texture" id=27]
+[ext_resource path="res://textures/Mountain3_Albedo.png" type="Texture" id=28]
+[ext_resource path="res://textures/Mountain5_Normal.png" type="Texture" id=29]
+[ext_resource path="res://textures/Mountain4_Normal.png" type="Texture" id=30]
+[ext_resource path="res://textures/Mountain5_Emit.png" type="Texture" id=31]
+[ext_resource path="res://textures/Mountain3_Emit.png" type="Texture" id=32]
+[ext_resource path="res://textures/Mountain5_Albedo.png" type="Texture" id=33]
+[ext_resource path="res://textures/Mountain4_Emit.png" type="Texture" id=34]
+[ext_resource path="res://textures/Mountain2_Normal.png" type="Texture" id=35]
+[ext_resource path="res://models/Mountain4.obj" type="ArrayMesh" id=36]
+[ext_resource path="res://models/Mountain3.obj" type="ArrayMesh" id=37]
+[ext_resource path="res://models/Mountain2.obj" type="ArrayMesh" id=38]
+[ext_resource path="res://models/Mountain5.obj" type="ArrayMesh" id=39]
+[ext_resource path="res://models/Rock3.glb" type="PackedScene" id=40]
+[ext_resource path="res://models/Rock1" type="PackedScene" id=41]
+[ext_resource path="res://textures/Rock1_Normal.png" type="Texture" id=42]
+[ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=43]
+[ext_resource path="res://textures/Rock2_Albedo.png" type="Texture" id=44]
+[ext_resource path="res://textures/Rock2_Normal.png" type="Texture" id=45]
+[ext_resource path="res://textures/Rock3_Albedo.png" type="Texture" id=46]
+[ext_resource path="res://textures/Rock3_Normal.png" type="Texture" id=47]
+[ext_resource path="res://scenes/Level3.tscn" type="PackedScene" id=48]
+[ext_resource path="res://scenes/Level2.tscn" type="PackedScene" id=49]
+[ext_resource path="res://scenes/Camera002.tscn" type="PackedScene" id=50]
+[ext_resource path="res://scenes/Camera001.tscn" type="PackedScene" id=51]
+[ext_resource path="res://scenes/Camera.tscn" type="PackedScene" id=52]
+
+[sub_resource type="ShaderMaterial" id=1]
+render_priority = -123
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.446
+shader_param/max_density = 6.0
+shader_param/altitude = 2000.0
+shader_param/color = Color( 0.937255, 0.811765, 0.74902, 1 )
+shader_param/detail_noise = true
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=2]
+render_priority = -124
+next_pass = SubResource( 1 )
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.46238
+shader_param/max_density = 8.89052
+shader_param/altitude = 2031.2
+shader_param/color = Color( 0.959843, 0.87953, 0.839373, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=3]
+render_priority = -125
+next_pass = SubResource( 2 )
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.474707
+shader_param/max_density = 11.066
+shader_param/altitude = 2062.4
+shader_param/color = Color( 0.977412, 0.932235, 0.909647, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=4]
+render_priority = -126
+next_pass = SubResource( 3 )
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.479933
+shader_param/max_density = 11.9882
+shader_param/altitude = 2093.6
+shader_param/color = Color( 0.989961, 0.969882, 0.959843, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=5]
+render_priority = -127
+next_pass = SubResource( 4 )
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.476764
+shader_param/max_density = 11.429
+shader_param/altitude = 2124.8
+shader_param/color = Color( 0.99749, 0.992471, 0.989961, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=6]
+render_priority = -128
+next_pass = SubResource( 5 )
+shader = ExtResource( 2 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 200 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.465985
+shader_param/max_density = 9.52671
+shader_param/altitude = 2156.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 2
+emission_box_extents = Vector3( 3, 1, 3 )
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 0.4
+angular_velocity = 15.0
+angular_velocity_random = 1.0
+scale = 0.01
+scale_random = 0.1
+color = Color( 1, 1, 1, 0 )
+hue_variation = -0.1
+
+[sub_resource type="QuadMesh" id=8]
+material = ExtResource( 6 )
+
+[sub_resource type="QuadMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+albedo_color = Color( 0.2, 0.109804, 0.0941176, 0.92549 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 15 )
+metallic_specular = 0.19
+roughness = 0.62
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 19 )
+normal_enabled = true
+normal_scale = 2.48
+normal_texture = ExtResource( 18 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 17 )
+metallic_specular = 0.16
+roughness = 0.68
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 23 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 16 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 25 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 27 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 35 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 28 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 32 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 24 )
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_texture = ExtResource( 26 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 34 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 30 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 33 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 31 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 29 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_texture = ExtResource( 21 )
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 22 )
+normal_enabled = true
+normal_scale = 2.41
+normal_texture = ExtResource( 20 )
+
+[sub_resource type="SpatialMaterial" id=18]
+albedo_texture = ExtResource( 46 )
+roughness = 0.76
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 47 )
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = ExtResource( 44 )
+roughness = 0.81
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 45 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 12 )
+roughness = 0.74
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource( 42 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.6, 0.6, 0.6, 0.611765 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 48
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 36
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 80
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 54
+font_data = ExtResource( 7 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 8 )
+
+[node name="Spatial" type="Spatial" parent="."]
+script = ExtResource( 4 )
+
+[node name="Camera001" parent="Spatial" instance=ExtResource( 51 )]
+
+[node name="Camera002" parent="Spatial" instance=ExtResource( 50 )]
+
+[node name="Camera003" parent="Spatial" instance=ExtResource( 3 )]
+transform = Transform( 0.913545, -0.406737, 1.38669e-09, -0.0020303, -0.00456012, 0.999988, -0.406732, -0.913534, -0.00499167, 6.661, 5.821, 5.951 )
+
+[node name="Camera" parent="Spatial" instance=ExtResource( 52 )]
+
+[node name="Cloud" parent="Spatial" instance=ExtResource( 1 )]
+transform = Transform( -50.025, 0, 0, 0, 50.025, 4.37332e-06, 0, -4.37332e-06, 50.025, 1.94354, 1.67483, -0.624153 )
+material_override = SubResource( 6 )
+shade_color = Color( 0.937255, 0.811765, 0.74902, 1 )
+cloud_speed = Vector2( 200, 200 )
+cloud_min_density_high = 0.446
+auto_follow_camera = false
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Spatial"]
+transform = Transform( -0.580589, 0.44034, -0.684848, -4.72807e-08, 0.841133, 0.540828, 0.814197, 0.313999, -0.488353, 0.848497, 9.73778, -3 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="Spatial"]
+transform = Transform( 0.70914, 0.00143977, 0.705066, -0.00118526, 0.999999, -0.000849925, -0.705067, -0.000232971, 0.709141, -0.44941, 2.04376, -0.387542 )
+environment = ExtResource( 5 )
+current = true
+target = NodePath("../Camera")
+speed = 4.0
+enabled = true
+
+[node name="StartDustParticles" type="Particles" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04172, 4.68498, 3.74102 )
+emitting = false
+amount = 80
+lifetime = 20.0
+one_shot = true
+visibility_aabb = AABB( -7.38032, -4.11033, -6.39354, 14.7606, 8.22067, 12.7871 )
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="DustParticles" type="Particles" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07195, 5.32701, 3.72987 )
+amount = 80
+lifetime = 20.0
+visibility_aabb = AABB( -7.38032, -4, -6.39354, 14.7606, 8, 12.7871 )
+process_material = SubResource( 7 )
+draw_pass_1 = SubResource( 8 )
+
+[node name="BackgroundFog" type="MeshInstance" parent="Spatial"]
+transform = Transform( 33.5552, 87.7722, -8221.03, -0.283104, 84.3633, 18531.6, -31.2332, 93.5328, -9000.18, 23.5541, 11.0347, 25.5319 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="Volcano" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, -0.000202924, -0.000109304, 0.000202898, 1, -0.000157677, 0.000109353, 0.000157643, 1, 0, 0, 0 )
+mesh = ExtResource( 14 )
+material/0 = SubResource( 11 )
+
+[node name="Mountain1" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 11 )
+material/0 = SubResource( 12 )
+
+[node name="Mountain2" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 38 )
+material/0 = SubResource( 13 )
+
+[node name="Mountain3" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 37 )
+material/0 = SubResource( 14 )
+
+[node name="Mountain4" type="MeshInstance" parent="Spatial"]
+mesh = ExtResource( 36 )
+material/0 = SubResource( 15 )
+
+[node name="Mountain5" type="MeshInstance" parent="Spatial"]
+transform = Transform( 0.999996, 0.00179446, 0.00199324, -0.00179539, 0.999998, 0.000467313, -0.0019924, -0.000470879, 0.999998, 0, 0, 0 )
+mesh = ExtResource( 39 )
+material/0 = SubResource( 16 )
+
+[node name="Lava" type="MeshInstance" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000593424, 0, 0.00039804 )
+mesh = ExtResource( 13 )
+material/0 = SubResource( 17 )
+
+[node name="Rock3" parent="Spatial" instance=ExtResource( 40 )]
+
+[node name="rock3" parent="Spatial/Rock3" index="0"]
+material/0 = SubResource( 18 )
+
+[node name="Level3Field" type="Position3D" parent="Spatial/Rock3/rock3" index="0"]
+transform = Transform( -0.0131458, 4.65661e-09, 0.103004, -2.93367e-08, 0.13, 2.79397e-09, -0.103004, -2.09548e-08, -0.0131457, 0.255893, -0.139118, -0.347408 )
+script = ExtResource( 9 )
+cell_size = 2
+header_offset = 1.0
+grid_map_scene = ExtResource( 48 )
+
+[node name="Timer" type="Timer" parent="Spatial/Rock3/rock3/Level3Field"]
+
+[node name="Rock2" parent="Spatial" instance=ExtResource( 10 )]
+
+[node name="rock2" parent="Spatial/Rock2" index="0"]
+material/0 = SubResource( 19 )
+
+[node name="Level2Field" type="Position3D" parent="Spatial/Rock2/rock2" index="0"]
+transform = Transform( -3.21965e-15, 2.98023e-08, 0.116318, -0.121716, -5.68458e-09, -4.44089e-16, 5.32036e-09, -0.130048, 5.21541e-08, 0.312006, -0.472692, -0.0983467 )
+script = ExtResource( 9 )
+cell_size = 2
+header_offset = 1.0
+grid_map_scene = ExtResource( 49 )
+
+[node name="Timer" type="Timer" parent="Spatial/Rock2/rock2/Level2Field"]
+
+[node name="Rock1" parent="Spatial" instance=ExtResource( 41 )]
+
+[node name="rock1" parent="Spatial/Rock1" index="0"]
+material/0 = SubResource( 20 )
+
+[node name="Level1Field" type="Position3D" parent="Spatial/Rock1/rock1" index="0"]
+transform = Transform( 0, -3.72529e-08, 0.090416, -0.0675621, 2.23517e-08, 3.72529e-09, -1.67638e-08, -0.107725, -2.6077e-08, 0.3531, -0.359528, -0.159964 )
+script = ExtResource( 9 )
+cell_size = 2
+header_offset = 1.0
+grid_map_scene = ExtResource( 43 )
+
+[node name="Timer" type="Timer" parent="Spatial/Rock1/rock1/Level1Field"]
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseScreen" type="PanelContainer" parent="UI"]
+visible = false
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.7
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/PauseScreen"]
+margin_right = 280.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="VBoxContainer" parent="UI/PauseScreen/CenterContainer"]
+visible = false
+margin_left = 66.0
+margin_top = 99.0
+margin_right = 214.0
+margin_bottom = 285.0
+
+[node name="Label" type="Label" parent="UI/PauseScreen/CenterContainer/Pause"]
+margin_right = 141.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 22 )
+text = "Pause"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="UI/PauseScreen/CenterContainer/Pause"]
+margin_top = 52.0
+margin_right = 141.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 23 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UI/PauseScreen/CenterContainer/Pause"]
+margin_left = -30.0
+margin_top = 52.0
+margin_right = 162.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 23 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="UI/PauseScreen/CenterContainer/Pause"]
+margin_top = 98.0
+margin_right = 141.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 23 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Success" type="VBoxContainer" parent="UI/PauseScreen/CenterContainer"]
+visible = false
+margin_left = 39.0
+margin_top = 76.0
+margin_right = 241.0
+margin_bottom = 308.0
+
+[node name="Label" type="Label" parent="UI/PauseScreen/CenterContainer/Success"]
+margin_right = 192.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 22 )
+text = "Success"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="UI/PauseScreen/CenterContainer/Success"]
+margin_top = 52.0
+margin_right = 192.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 23 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UI/PauseScreen/CenterContainer/Success"]
+margin_top = 98.0
+margin_right = 192.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 23 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevel" type="Button" parent="UI/PauseScreen/CenterContainer/Success"]
+margin_top = 144.0
+margin_right = 192.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 23 )
+text = "Next Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="UI/PauseScreen/CenterContainer/Success"]
+margin_top = 190.0
+margin_right = 192.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 23 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Failed" type="VBoxContainer" parent="UI/PauseScreen/CenterContainer"]
+visible = false
+margin_left = 66.0
+margin_top = 99.0
+margin_right = 214.0
+margin_bottom = 285.0
+
+[node name="Label" type="Label" parent="UI/PauseScreen/CenterContainer/Failed"]
+margin_right = 132.0
+margin_bottom = 48.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 22 )
+text = "Failed"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="UI/PauseScreen/CenterContainer/Failed"]
+margin_top = 52.0
+margin_right = 132.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 23 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UI/PauseScreen/CenterContainer/Failed"]
+margin_top = 98.0
+margin_right = 132.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 23 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="UI/PauseScreen/CenterContainer/Failed"]
+margin_top = 144.0
+margin_right = 132.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 23 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndGame" type="VBoxContainer" parent="UI/PauseScreen/CenterContainer"]
+visible = false
+margin_left = 44.0
+margin_top = 73.0
+margin_right = 236.0
+margin_bottom = 310.0
+
+[node name="Label" type="Label" parent="UI/PauseScreen/CenterContainer/EndGame"]
+margin_right = 192.0
+margin_bottom = 99.0
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 22 )
+text = "Success
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Button" parent="UI/PauseScreen/CenterContainer/EndGame"]
+margin_top = 103.0
+margin_right = 192.0
+margin_bottom = 145.0
+custom_fonts/font = SubResource( 23 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="UI/PauseScreen/CenterContainer/EndGame"]
+margin_top = 149.0
+margin_right = 192.0
+margin_bottom = 191.0
+custom_fonts/font = SubResource( 23 )
+text = "Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="UI/PauseScreen/CenterContainer/EndGame"]
+margin_top = 195.0
+margin_right = 192.0
+margin_bottom = 237.0
+custom_fonts/font = SubResource( 23 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleScreen" type="CenterContainer" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TitleScreen"]
+margin_left = 182.0
+margin_top = 60.0
+margin_right = 517.0
+margin_bottom = 926.0
+
+[node name="Title" type="Label" parent="UI/TitleScreen/VBoxContainer"]
+margin_right = 335.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 24 )
+text = "Volcano 
+Game"
+align = 1
+valign = 1
+
+[node name="Separator" type="Label" parent="UI/TitleScreen/VBoxContainer"]
+margin_top = 167.0
+margin_right = 335.0
+margin_bottom = 606.0
+text = "
+                                                                          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="Button" parent="UI/TitleScreen/VBoxContainer"]
+margin_top = 610.0
+margin_right = 335.0
+margin_bottom = 671.0
+size_flags_vertical = 9
+custom_fonts/font = SubResource( 25 )
+text = "Level1"
+
+[node name="Level2" type="Button" parent="UI/TitleScreen/VBoxContainer"]
+margin_top = 675.0
+margin_right = 335.0
+margin_bottom = 736.0
+size_flags_vertical = 9
+custom_fonts/font = SubResource( 25 )
+text = "Level2"
+
+[node name="Level3" type="Button" parent="UI/TitleScreen/VBoxContainer"]
+margin_top = 740.0
+margin_right = 335.0
+margin_bottom = 801.0
+size_flags_vertical = 9
+custom_fonts/font = SubResource( 25 )
+text = "Level3"
+
+[node name="Exit" type="Button" parent="UI/TitleScreen/VBoxContainer"]
+margin_top = 805.0
+margin_right = 335.0
+margin_bottom = 866.0
+custom_fonts/font = SubResource( 25 )
+text = "Exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="succeed" from="Spatial/Rock3/rock3/Level3Field" to="." method="_on_Level1Field_succeed"]
+[connection signal="succeed" from="Spatial/Rock2/rock2/Level2Field" to="." method="_on_Level1Field_succeed"]
+[connection signal="succeed" from="Spatial/Rock1/rock1/Level1Field" to="." method="_on_Level1Field_succeed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Pause/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Pause/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Pause/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Success/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Success/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Success/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Success/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Failed/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Failed/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/Failed/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/EndGame/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/EndGame/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/CenterContainer/EndGame/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="UI/TitleScreen/VBoxContainer/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="UI/TitleScreen/VBoxContainer/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="UI/TitleScreen/VBoxContainer/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="UI/TitleScreen/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+
+[editable path="Spatial/Rock3"]
+[editable path="Spatial/Rock2"]
+[editable path="Spatial/Rock1"]

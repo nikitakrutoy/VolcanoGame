@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Prototype/chip.gd" type="Script" id=1]
+[ext_resource path="res://img/icon.svg" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="Chip" type="Sprite"]
+modulate = Color( 1, 0, 0, 1 )
+material = SubResource( 1 )
+position = Vector2( 252.686, 210.326 )
+scale = Vector2( 0.540408, 0.540408 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )

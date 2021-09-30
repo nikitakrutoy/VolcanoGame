@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/GodotPlate.obj-bc815d29b6a5d2cd956a01afa2708ced.mesh"
+
+[deps]
+
+files=[ "res://.import/GodotPlate.obj-bc815d29b6a5d2cd956a01afa2708ced.mesh" ]
+
+source_file="res://models/GodotPlate.obj"
+dest_files=[ "res://.import/GodotPlate.obj-bc815d29b6a5d2cd956a01afa2708ced.mesh", "res://.import/GodotPlate.obj-bc815d29b6a5d2cd956a01afa2708ced.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

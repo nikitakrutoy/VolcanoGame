@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/cloud/Cloud.shader" type="Shader" id=1]
+[ext_resource path="res://addons/cloud/Cloud.gd" type="Script" id=2]
+[ext_resource path="res://addons/cloud/CageMesh.tres" type="ArrayMesh" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+render_priority = 120
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.6
+shader_param/max_density = 6.0
+shader_param/altitude = 2000.0
+shader_param/color = Color( 0.937255, 0.901961, 0.74902, 1 )
+shader_param/detail_noise = true
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=2]
+render_priority = 120
+next_pass = SubResource( 1 )
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.54219
+shader_param/max_density = 8.89052
+shader_param/altitude = 2031.2
+shader_param/color = Color( 0.959843, 0.937255, 0.839373, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=3]
+render_priority = 120
+next_pass = SubResource( 2 )
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.498681
+shader_param/max_density = 11.066
+shader_param/altitude = 2062.4
+shader_param/color = Color( 0.977412, 0.964706, 0.909647, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=4]
+render_priority = 120
+next_pass = SubResource( 3 )
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.480237
+shader_param/max_density = 11.9882
+shader_param/altitude = 2093.6
+shader_param/color = Color( 0.989961, 0.984314, 0.959843, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=5]
+render_priority = 120
+next_pass = SubResource( 4 )
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.491421
+shader_param/max_density = 11.429
+shader_param/altitude = 2124.8
+shader_param/color = Color( 0.99749, 0.996078, 0.989961, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[sub_resource type="ShaderMaterial" id=6]
+render_priority = 120
+next_pass = SubResource( 5 )
+shader = ExtResource( 1 )
+shader_param/seed = -10000.0
+shader_param/speed = Vector2( 200, 0 )
+shader_param/transform_speed = Vector2( 0, 1e-05 )
+shader_param/min_density = 0.529466
+shader_param/max_density = 9.52671
+shader_param/altitude = 2156.0
+shader_param/color = Color( 1, 1, 1, 1 )
+shader_param/detail_noise = false
+shader_param/upper_enabled = true
+shader_param/lower_enabled = false
+
+[node name="Cloud" type="MeshInstance"]
+transform = Transform( 50.025, 0, 0, 0, 50.025, 0, 0, 0, 50.025, 0.00248957, 0, 0.00225401 )
+material_override = SubResource( 6 )
+cast_shadow = 0
+mesh = ExtResource( 3 )
+material/0 = null
+script = ExtResource( 2 )
+shade_color = Color( 0.937255, 0.901961, 0.74902, 1 )
+cloud_speed = Vector2( 200, 0 )
+
+[node name="Camera" type="Camera" parent="."]
