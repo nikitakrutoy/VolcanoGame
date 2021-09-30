@@ -1,0 +1,6 @@
+.mono
+.import
+bin
+.DS_Store
+export_presets.cfg
+logs
